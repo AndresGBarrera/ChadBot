@@ -105,4 +105,5 @@ class music_cog(commands.Cog):
     async def stop(self, ctx):
       self.vc.stop()
       await self.vc.disconnect()
-      await ctx.send("Music has stopped, ChadBot has left the chat. Peace!")
+      self.music_queue.clear()
+      await ctx.send("Music has stopped, queue has been cleared \nChadBot has left the chat. Peace!")
